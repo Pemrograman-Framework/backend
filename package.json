@@ -4,22 +4,31 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "next dev",
+    "dev:backend": "tsx watch backend/src/server.ts",
+    "build": "next build",
+    "build:backend": "tsc -p backend/tsconfig.json",
+    "start": "next start",
+    "start:backend": "tsx backend/src/server.ts",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "next start"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "lucide-react": "^1.52.0",
+    "mysql2": "^3.24.6",
+    "next": "^16.4.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.4"
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
-    "@vitejs/plugin-react": "^6.1.1",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.4",
     "oxlint": "^1.81.0",
-    "vite": "^8.3.0"
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
   }
 }
