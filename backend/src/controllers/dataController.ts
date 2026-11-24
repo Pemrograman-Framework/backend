@@ -20,7 +20,10 @@ export const writeCollection = async (request: Request, response: Response, next
       response.status(400).json({ error: 'Request body must be an array.' })
       return
     }
-    response.json({ data: await replaceCollection(collection as CollectionName, request.body) })
+
+    response.json({
+      data: await replaceCollection(collection as CollectionName, request.body),
+    })
   } catch (error) {
     next(error)
   }

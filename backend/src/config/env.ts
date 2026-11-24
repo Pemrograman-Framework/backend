@@ -1,7 +1,9 @@
 import dotenv from 'dotenv'
-import { resolve } from 'node:path'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-dotenv.config({ path: resolve(process.cwd(), 'backend/.env') })
+// Selalu baca backend/.env, tidak peduli terminal dibuka dari folder mana.
+dotenv.config({ path: resolve(dirname(fileURLToPath(import.meta.url)), '../../.env') })
 
 const port = Number(process.env.PORT || 4000)
 const mysqlPort = Number(process.env.MYSQL_PORT || 3306)
