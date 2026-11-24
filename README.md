@@ -15,7 +15,7 @@ Buka terminal kedua untuk menjalankan API:
 npm run dev:backend
 ```
 
-Web tersedia di `http://localhost:3000` dan API di `http://localhost:4000/api`. Backend menyimpan data aplikasi di MySQL; file JSON lama digunakan untuk impor awal bila tabel database masih kosong.
+Web tersedia di `http://localhost:3000` dan API di `http://localhost:4000/api`. Jika port 3000 sudah digunakan, Next.js dapat memilih port 3001; API development menerima kedua origin localhost tersebut. Backend menyimpan data aplikasi di MySQL; file JSON lama digunakan untuk impor awal bila tabel database masih kosong.
 
 ## Database MySQL
 

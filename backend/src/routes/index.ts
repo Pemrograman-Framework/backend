@@ -1,11 +1,13 @@
 import { Router } from 'express'
-import authRoutes from './authRoutes.js'
-import dataRoutes from './dataRoutes.js'
+import { login, logout } from '../controllers/authController.js'
+import { readData, writeCollection } from '../controllers/dataController.js'
+import { requireAuth } from '../middlewares/authMiddleware.js'
 
-const routes = Router()
+const router = Router()
 
-routes.get('/health', (_request, response) => response.json({ status: 'ok' }))
-routes.use('/auth', authRoutes)
-routes.use('/data', dataRoutes)
+router.post('/auth/login', login)
+router.post('/auth/logout', logout)
+router.get('/data', requireAuth, readData)
+router.put('/data/:collection', requireAuth, writeCollection)
 
-export default routes
+export default router
